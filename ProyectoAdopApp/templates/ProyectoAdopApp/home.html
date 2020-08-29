@@ -1,0 +1,72 @@
+<html>
+
+<head>
+{% extends "ProyectoAdopApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ProyectoAdopApp/img/secundaria.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading-lower mb-4" >
+            <span class="section-heading-upper">Adopcion de Macotas </span>
+          </h2>
+          <p class="mb-3">Hola, Adopta y dale un hogar a estos animalitos</p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Con más de 5 años de experiencia a nuestras espaldas, podemos apoyarte y facilitarte la adopcion de una mascota </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Contactanos</span>
+              </h2>
+              {% if form.error %}
+              <h1 style="color: red;">Revisa este campo </h1>
+              {% endif %}
+              <form action="" method="POST"> {% csrf_token %}
+                <table>
+                  {{form.as_table}}
+                </table>
+                <input type="submit" value="Enviar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
+
+
+   
+</body>
+</html>

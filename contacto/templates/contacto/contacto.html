@@ -1,0 +1,27 @@
+
+{% extends "ProyectoAdopApp/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading-lower mb-4" >
+          <span class="section-heading-upper" > Registrate para adoptar un perrito</span>
+        </h2><p class="section-heading-lower mb-4>"></p>
+        {% if form.error %}
+            <h1 style="color: red;">Revisa este campo </h1>
+        {% endif %}
+          <form action="" method="POST"> {% csrf_token %}
+            <table>
+              {{form.as_table}}
+            </table>
+            <input type="submit" value="Enviar">
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<html>
+{% extends "ProyectoAdopApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for adopcion in adopcion %}
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{adopcion.imagen.url}}" style="width: 50%">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading-lower mb-4" >
+                <span class="section-heading-upper" >{{adopcion.nombre}} </span>
+              </h2>
+              <p class="section-heading-lower mb-4>">{{adopcion.descripcion}}</p>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    
+    {% endfor %}
+{% endblock %}
+
+</html>
